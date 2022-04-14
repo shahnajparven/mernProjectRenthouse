@@ -1,0 +1,49 @@
+.category{
+    height: auto;
+    width: 100%;
+    background-color: #ffffff;
+    z-index: 5;
+}
+.category-container{
+    padding-top: 18vh;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding-bottom: 3rem;
+    list-style: none;
+}
+.category-container h2{
+padding-left: 1%;
+}
+
+.cat-btn{
+    background-color: #ffc178 !important;
+    border: none !important;
+}
+.cat-card1{
+    background-color: #47C3CF!important;
+    color: #ffffff;
+}
+.cat-card2{
+    background-color: #e887bb!important;
+    color: #ffffff;
+}
+.cat-card3{
+    background-color: #79e0af!important;
+    color: #ffffff;
+}
+.cat-card4{
+    background-color: #B0C4DE!important;
+    color: #ffffff;
+}
+.cat-card5{
+    background-color: #FA8072!important;
+    color: #ffffff;
+}
+.cat-card6{
+    background-color: #FFC0CC!important;
+    color: #ffffff;
+}
+.cat-card7{
+    background-color: #90EE90!important;
+    color: #ffffff;
+}

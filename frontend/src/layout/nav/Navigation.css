@@ -1,0 +1,42 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+.navbar{
+    height: 15vh;
+    width: 100%;
+    z-index: 2;
+    position: fixed !important;
+    padding-left: 10%;
+    padding-right: 10%;
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.26);
+}
+
+.navlink{
+  margin: .6rem;
+  text-decoration: none;
+  color: gray;
+}
+
+.logo_name    {
+    font-weight: bold;
+    margin-left: .5rem;
+    text-decoration: none;
+    margin-top: .3rem;
+    color: black;
+        }
+
+ .d-flex.login{
+  background-color: #ffffff !important;
+  height:2.5rem;
+  box-shadow: none !important;
+  border: 1px solid #ffc178 !important;
+ }
+
+ .login img{
+   height: 1.2rem;
+   width: 1.2rem;
+   margin: .3rem;
+ }   

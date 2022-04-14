@@ -1,0 +1,53 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+.reward{
+      margin-top:5vh;
+      margin-left: 10%;
+      margin-right: 10%;
+  }
+
+.reward-title h2{
+    font-weight: bold;
+    color: #ffffff;
+    }
+.reward-title p{
+    font-size: 16px !important;
+    color: #ffffff;
+}
+.reward-card1{
+    background-color:#47C3CF!important;
+    margin-top: 1.5rem;
+    padding: 20px;
+    text-align: center;
+}
+.reward-card2{
+    background-color:#e887bb!important;
+    margin-top: 1.5rem;
+    padding: 20px;
+    text-align: center;
+}
+.reward-card3{
+    background-color:#e887bb!important;
+    margin-top: 1.5rem;
+    padding: 20px;
+    text-align: center;
+    background-image: linear-gradient(rgba(84, 125, 240, 0.2), rgba(60, 123, 175, 0.2)), url('../../project-pic/grid1.jpg');
+}
+
+.reward-card4{
+    background-color:#ffc178!important;
+    margin-top: 1.5rem;
+    padding: 20px;
+    text-align: center;
+}
+.reward-card5{
+    background-color:#79e0af!important;
+    margin-top: 1.5rem;
+    padding: 20px;
+    text-align: center;
+}
