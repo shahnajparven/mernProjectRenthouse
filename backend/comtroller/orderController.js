@@ -2,6 +2,8 @@ const Order = require("../models/orderModel");
 const Product = require("../models/productModel");
 const ErrorHander = require("../utils/errorhander");
 const catchAsyncErrors = require("../middleware/catchAsyncError");
+const cloudinary = require("cloudinary");
+
 
 // Create new Order
 exports.newOrder = catchAsyncErrors(async (req, res, next) => {
@@ -50,6 +52,8 @@ exports.getSingleOrder = catchAsyncErrors(async (req, res, next) => {
   });
 });
 
+
+
 // get logged in user  Orders
 exports.myOrders = catchAsyncErrors(async (req, res, next) => {
   const orders = await Order.find({ user: req.user._id });
@@ -89,7 +93,7 @@ exports.updateOrder = catchAsyncErrors(async (req, res, next) => {
     return next(new ErrorHander("You have already delivered this order", 400));
   }
 
-  if (req.body.status === "Shipped") {
+  if (req.body.status === "Confirmed") {
     order.orderItems.forEach(async (o) => {
       await updateStock(o.product, o.quantity);
     });
@@ -113,6 +117,8 @@ async function updateStock(id, quantity) {
 
   await product.save({ validateBeforeSave: false });
 }
+
+
 
 // delete Order -- Admin
 exports.deleteOrder = catchAsyncErrors(async (req, res, next) => {

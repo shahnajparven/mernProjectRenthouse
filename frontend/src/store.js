@@ -1,20 +1,52 @@
 import { createStore, combineReducers, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";
-import { productDetailsReducer, productReducer,newProductReducer, newReviewReducer } from './reducers/productReducer';
-import { allUsersReducer, profileReducer, userReducer } from "./reducers/userReducer";
+import {
+   productDetailsReducer,
+    productsReducer,
+    newProductReducer,
+    newReviewReducer, 
+    productReducer } from './reducers/productReducer';
+
+import { 
+  allUsersReducer, 
+  forgotPasswordReducer,
+  profileReducer, 
+  userReducer, 
+  forgotPasswordReducerr, 
+  userDetailsReducer } from "./reducers/userReducer";
+
 import { cartReducer } from "./reducers/cartReducer";
 import { newPickupReducer } from "./reducers/pickupReducers";
+import {
+  allOrdersReducer,
+  myOrdersReducer,
+  newOrderReducer,
+  orderDetailsReducer,
+  orderReducer,
+  productOrderReducer,
+} from "./reducers/orderReducer";
+
 
 const reducer = combineReducers({
-  products:productReducer,
+  products:productsReducer,
   productDetails:productDetailsReducer,
   user:userReducer,
   profile: profileReducer,
-  allUsers: allUsersReducer,
-  newProduct: newProductReducer,
+  forgotPassword: forgotPasswordReducer,
   cart: cartReducer,
+  newOrder: newOrderReducer,
+  myOrders: myOrdersReducer,
+  orderDetails: orderDetailsReducer,
   newReview: newReviewReducer,
+  newProduct: newProductReducer,
+  product: productReducer,
+  allOrders: allOrdersReducer,
+  order: orderReducer,
+  allUsers: allUsersReducer,
+  userDetails: userDetailsReducer,
+
+  productOrder: productOrderReducer,
   newPickup: newPickupReducer,
 });
 
@@ -23,9 +55,9 @@ let initialState = {
     cartItems: localStorage.getItem("cartItems")
       ? JSON.parse(localStorage.getItem("cartItems"))
       : [],
-    // shippingInfo: localStorage.getItem("shippingInfo")
-    //   ? JSON.parse(localStorage.getItem("shippingInfo"))
-    //   : {},
+    shippingInfo: localStorage.getItem("shippingInfo")
+      ? JSON.parse(localStorage.getItem("shippingInfo"))
+      : {},
   },
 
   };

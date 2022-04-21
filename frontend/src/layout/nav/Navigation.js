@@ -2,9 +2,6 @@ import React from 'react';
 import pic1 from '../../project-pic/home.png';
 import pic2 from '../../project-pic/login.png';
 import pic3 from '../../project-pic/menu.png';
-import Registration from '../../component/registration/Registration';
-// import Page from '../../components/registration/Page';
-
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import Form from 'react-bootstrap/Form';
@@ -22,9 +19,10 @@ import styled from 'styled-components';
 // import Search from '../../components/search/Search';
 import {Tooltip,OverlayTrigger} from 'react-bootstrap';
 import Overlay from 'react-bootstrap/Overlay';
-import {NavLink,useLocation} from 'react-router-dom';
+import {Link, NavLink,useLocation} from 'react-router-dom';
 import Products from '../../component/Home/Products';
 import Search from '../../component/Home/Search';
+import HomeIcon from '@mui/icons-material/Home';
 
 
 
@@ -52,19 +50,19 @@ return (
 
   <Navbar bg="white" expand="lg" className="navbar">
     <Container fluid>
-    <FaEject />
+    <HomeIcon/>
       {/* <img
         className="d-block w-5" src={pic1}
         alt="Second slide" height="20px"
       /> */}
-      <Navbar.Brand href="/" className="logo_name">TO-LET</Navbar.Brand>
+      <NavLink to="/" className="logo_name">  TO-LET</NavLink>
       <Navbar.Toggle aria-controls="navbarScroll" />
       <Navbar.Collapse id="navbarScroll">
 
         <Nav className="me-auto my-2 my-lg-0 navitms">
           <NavLink className="navlink" to="/">Home</NavLink>
           <NavLink className="navlink" to="Category">Category</NavLink>
-          <NavLink className="navlink" to="Products">Broadcase</NavLink>
+          <NavLink className="navlink" to="Products">Broadcast</NavLink>
           <NavLink className="navlink" to="Productttt">Guesthouse</NavLink>
           <NavLink className="navlink" to="Pickup">Pick-up</NavLink>
           {/* <NavLink className= "navlink" to="Cart">CART</NavLink> */}
@@ -90,7 +88,6 @@ return (
       
       </Button>
       </NavLink>
-      <Registration showModal1={showModal1} setShowModal1={setShowModal1}/> 
     
     </Container>
   </Navbar>

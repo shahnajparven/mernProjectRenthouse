@@ -29,7 +29,7 @@ const NewProduct = ({ history }) => {
   const categories = [
   "Rent-House",
   "Sublet",
-  "Bechelors",
+  "Bachelors",
   "Commersial-Area",
   ];
 
@@ -141,7 +141,7 @@ const NewProduct = ({ history }) => {
               </select>
             </div>
 
-            {/* <div>
+            <div>
               <StorageIcon />
               <input
                 type="number"
@@ -149,7 +149,7 @@ const NewProduct = ({ history }) => {
                 required
                 onChange={(e) => setStock(e.target.value)}
               />
-            </div> */}
+            </div>
 
             <div id="createProductFormFile">
               <input

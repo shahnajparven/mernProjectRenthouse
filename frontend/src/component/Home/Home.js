@@ -3,7 +3,6 @@ import "./Product.css";
 import { getProduct } from "../../actions/productAction";
 import { useSelector, useDispatch } from "react-redux";
 import { useAlert } from "react-alert";
-import Navigation from "../../layout/Nav.js/Navigation";
 import ProductCard from "./ProductCard";
 import Products from "./Products";
 import { Link } from 'react-router-dom';

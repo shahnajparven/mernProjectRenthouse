@@ -14,7 +14,7 @@ import { Container } from "react-bootstrap";
 const categories = [
   "Rent-House",
   "Sublet",
-  "Bechelors",
+  "Bachelors",
   "Commersial-Area",
 ];
 

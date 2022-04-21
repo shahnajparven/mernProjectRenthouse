@@ -18,8 +18,8 @@ router
 
 router
 .route("/product/:id")
-.put(isAuthenticatedUser,authorizeRoles("user"),updateProduct)
-.delete(isAuthenticatedUser,authorizeRoles("user"),deleteProduct)
+.put(isAuthenticatedUser,authorizeRoles("admin"),updateProduct)
+.delete(isAuthenticatedUser,authorizeRoles("admin"),deleteProduct)
 .get(getProductDetails);
 
 router

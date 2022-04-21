@@ -17,8 +17,14 @@ exports.createPickup = catchAsyncError(async (req, res, next) => {
     pickup
   })
 });
-//get allpickup request
-exports.getAllPickup = catchAsyncError(async(req,res,next) =>{
-    res.status(201).json({message:"all ok"})
-    });
+
+// get allpickup request (Admin)
+exports.getAdminPickups = catchAsyncError(async (req, res, next) => {
+  const pickups = await Pickup.find();
+
+  res.status(200).json({
+    success: true,
+    pickups,
+  });
+});
 

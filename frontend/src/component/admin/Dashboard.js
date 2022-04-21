@@ -76,7 +76,7 @@ const Dashboard = () => {
         <div className="dashboardSummary">
           <div>
             <p>
-              Total Amount <br /> ₹200
+              Total Members <br /> 200
             </p>
           </div>
            <div className="dashboardSummaryBox2">
