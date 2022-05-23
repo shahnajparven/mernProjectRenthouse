@@ -17,7 +17,7 @@ import {
   userDetailsReducer } from "./reducers/userReducer";
 
 import { cartReducer } from "./reducers/cartReducer";
-import { newPickupReducer } from "./reducers/pickupReducers";
+import { newPickupReducer, pickupReducer, pickupsReducer } from "./reducers/pickupReducers";
 import {
   allOrdersReducer,
   myOrdersReducer,
@@ -48,6 +48,8 @@ const reducer = combineReducers({
 
   productOrder: productOrderReducer,
   newPickup: newPickupReducer,
+  pickup: pickupReducer,
+  pickups: pickupsReducer
 });
 
 let initialState = {

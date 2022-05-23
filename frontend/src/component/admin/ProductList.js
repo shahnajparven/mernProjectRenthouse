@@ -67,6 +67,7 @@ const ProductList = ({ history }) => {
       flex: 0.3,
     },
 
+    
     {
       field: "price",
       headerName: "Price",
@@ -111,6 +112,7 @@ const ProductList = ({ history }) => {
         stock: item.Stock,
         price: item.price,
         name: item.name,
+      
       });
     });
 
