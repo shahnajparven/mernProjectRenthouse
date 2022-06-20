@@ -17,6 +17,7 @@ import AttachMoneyIcon from "@material-ui/icons/AttachMoney";
 import AddLocationAltIcon from '@mui/icons-material/AddLocationAlt';
 import AccessibilityNewIcon from '@mui/icons-material/AccessibilityNew';
 import LocationCityIcon from '@mui/icons-material/LocationCity';
+import CallIcon from '@mui/icons-material/Call';
 
 const Notes = ({ history }) => {
 
@@ -27,12 +28,13 @@ const Notes = ({ history }) => {
 
     const [from, setFrom] = useState("");
     const [to, setTo] = useState("");
+    const [number, setNumber] = useState("");
     const [labour, setLabour] = useState("");
     const [flour, setFlour] = useState("");
     const [radio, setRadio] = useState("");
     const [date, setDate] = useState("");
     const [time, setTime] = useState("");
-
+ 
 
     useEffect(() => {
         if (error) {
@@ -54,6 +56,7 @@ const Notes = ({ history }) => {
 
         myForm.set("from", from);
         myForm.set("to", to);
+        myForm.set("number", number);
         myForm.set("labour", labour);
         myForm.set("flour", flour);
         myForm.set("radio", radio);
@@ -62,8 +65,6 @@ const Notes = ({ history }) => {
 
         dispatch(createPickup(myForm));
     };
-
-
 
 
     return (
@@ -101,6 +102,14 @@ const Notes = ({ history }) => {
 
                             />
                         </div>
+
+                        <div>
+                        <CallIcon />
+                      <input id='input' type='number' placeholder="Enter Phone number" name='number'
+                                value={pickup.number}
+                                onChange={(e) =>  setNumber(e.target.value)} />
+                        </div>
+
 
                         <div>
                             < AccessibilityNewIcon />
@@ -148,6 +157,8 @@ const Notes = ({ history }) => {
 
 
                         </div>
+
+                       
 
 
                         <div>

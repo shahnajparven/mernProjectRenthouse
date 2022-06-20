@@ -11,7 +11,7 @@ const Form = () => {
                 <a href="mailto:shahnajritu21@gmail.com">
                     <FaEnvelope />
                 </a>
-                <a title="Make a call" href="tel:+880-1745001556">
+                <a target="_blank" href="https://twitter.com/ShahnajRitu">
                     <FaTwitter />
                 </a>
                 <a target="_blank" href="https://www.facebook.com/shahnaj.ritu.5">

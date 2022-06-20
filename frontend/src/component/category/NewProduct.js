@@ -19,10 +19,11 @@ const NewProduct = ({ history }) => {
   const { loading, error, success } = useSelector((state) => state.newProduct);
 
   const [name, setName] = useState("");
+  const [location, setLocation] = useState("");
   const [price, setPrice] = useState(0);
   const [description, setDescription] = useState("");
   const [category, setCategory] = useState("");
-  const [Stock, setStock] = useState(0);
+  //const [Stock, setStock] = useState(0);
   const [images, setImages] = useState([]);
   const [imagesPreview, setImagesPreview] = useState([]);
 
@@ -52,10 +53,11 @@ const NewProduct = ({ history }) => {
     const myForm = new FormData();
 
     myForm.set("name", name);
+    myForm.set("location", location);
     myForm.set("price", price);
     myForm.set("description", description);
     myForm.set("category", category);
-    myForm.set("Stock", Stock);
+    //myForm.set("Stock", Stock);
 
     images.forEach((image) => {
       myForm.append("images", image);
@@ -86,8 +88,8 @@ const NewProduct = ({ history }) => {
   return (
     <Fragment>
    
-    <p>hey</p>
-    <p>hey</p>
+    <p>.</p>
+    <p>.</p>
       <div className="dashboards">
         <div className="newProductContainer">
           <form
@@ -101,10 +103,20 @@ const NewProduct = ({ history }) => {
               <SpellcheckIcon />
               <input
                 type="text"
-                placeholder="Enter Name"
+                placeholder="Enter Area"
                 required
                 value={name}
                 onChange={(e) => setName(e.target.value)}
+              />
+            </div>
+            <div>
+              <SpellcheckIcon />
+              <input
+                type="text"
+                placeholder="Enter house name"
+                required
+                value={location}
+                onChange={(e) => setLocation(e.target.value)}
               />
             </div>
             <div>
@@ -141,7 +153,7 @@ const NewProduct = ({ history }) => {
               </select>
             </div>
 
-            <div>
+            {/* <div>
               <StorageIcon />
               <input
                 type="number"
@@ -149,7 +161,7 @@ const NewProduct = ({ history }) => {
                 required
                 onChange={(e) => setStock(e.target.value)}
               />
-            </div>
+            </div> */}
 
             <div id="createProductFormFile">
               <input

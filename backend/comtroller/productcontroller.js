@@ -7,7 +7,7 @@ const cloudinary = require("cloudinary");
 
 
 
-// Create Product --Admin
+// Create Product
 exports.createProduct = catchAsyncError(async (req, res, next) => {
 
   let images = [];
@@ -41,9 +41,9 @@ exports.createProduct = catchAsyncError(async (req, res, next) => {
   })
 });
 
-//get allproduct 
-exports.getAllProducts = catchAsyncError(async (req, res, next) => {
 
+// Get All Product
+exports.getAllProducts = catchAsyncError(async (req, res, next) => {
   const resultPerPage = 8;
   const productsCount = await Product.countDocuments();
 
@@ -52,14 +52,18 @@ exports.getAllProducts = catchAsyncError(async (req, res, next) => {
     .filter()
     .pagination(resultPerPage);
 
-  const products = await apiFeature.query;
+  let products = await apiFeature.query;
+  let filteredProductsCount = products.length;
+  
   res.status(200).json({
     success: true,
     products,
     productsCount,
     resultPerPage,
-  })
+    filteredProductsCount,
+  });
 });
+
 
 // Get All Product (Admin)
 exports.getAdminProducts = catchAsyncError(async (req, res, next) => {
@@ -232,8 +236,12 @@ exports.deleteReview = catchAsyncError(async (req, res, next) => {
   }
 
   const reviews = product.reviews.filter(
+    
     (rev) => rev._id.toString() !== req.query.id.toString()
+
+
   );
+
 
   let avg = 0;
 

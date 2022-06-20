@@ -12,6 +12,7 @@ import { useAlert } from "react-alert";
 import { Button } from "@material-ui/core";
 import EditIcon from "@material-ui/icons/Edit";
 import DeleteIcon from "@material-ui/icons/Delete";
+import CallIcon from '@mui/icons-material/Call';
 import SideBar from "./Slidebar";
 import { DELETE_PICKUP_RESET } from "../../constants/pickupConstants";
 
@@ -54,55 +55,54 @@ const PickupList = ({ history }) => {
 
 
   const columns = [
-    { field: "id", headerName: "Pickup ID", minWidth: 250, flex: 0.5 },
+    { field: "id", headerName: "Pickup ID", minWidth: 150, flex: 0.5 },
 
     {
       field: "from",
       headerName: "From",
-      minWidth: 100,
-      flex: 1,
+      minWidth: 150,
+      flex: 0.4,
     },
     {
       field: "to",
       headerName: "To",
       minWidth: 100,
-      flex: 0.8,
+      flex: 0.3,
     },
 
     {
       field: "labour",
       headerName: "Labour",
-      type: "number",
-      minWidth: 100,
-      flex: 0.8,
+      minWidth: 150,
+      flex: 0.2,
     },
     {
       field: "flour",
       headerName: "Floor",
-      type: "number",
-      minWidth: 100,
-      flex: 0.8,
+      minWidth: 150,
+      flex: 0.2,
     },
     {
       field: "radio",
       headerName: "Vehicle",
-      minWidth: 100,
-      flex: 0.8,
+      minWidth: 150,
+      flex: 0.3,
     },
     {
       field: "date",
       headerName: "Date",
       type: "number",
-      minWidth: 100,
-      flex: 0.8,
+      minWidth: 150,
+      flex: 0.3,
     },
     {
       field: "time",
       headerName: "Time",
       type: "number",
-      minWidth: 100,
-      flex: 0.8,
+      minWidth: 150,
+      flex: 0.3,
     },
+
 
     {
       field: "actions",
@@ -124,11 +124,29 @@ const PickupList = ({ history }) => {
               }
             >
               <DeleteIcon />
-            </Button>
+            </Button>           
           </Fragment>
         );
       },
     },
+
+
+    {
+      field: "number",
+      headerName: "Confirm",
+      type: "number",
+      minWidth: 150,
+      flex: 0.3,
+      renderCell: (params) => {
+        return (
+          <Fragment>
+              <a href="tel:{item.number}"> <CallIcon /></a>
+          </Fragment>
+        );
+      },
+    },
+
+
   ];
 
   const rows = [];
@@ -138,8 +156,9 @@ const PickupList = ({ history }) => {
       rows.push({
         id: item._id,
          from: item.from,
-         labour: item.labour,
          to: item.to,
+         number: item.number,
+         labour: item.labour,
          flour: item.flour,
          radio: item.radio,
          date: item.date,
@@ -158,7 +177,7 @@ const PickupList = ({ history }) => {
           <DataGrid
             rows={rows}
             columns={columns}
-            pageSize={10}
+            pageSize={20}
             disableSelectionOnClick
             className="productListTable"
             autoHeight

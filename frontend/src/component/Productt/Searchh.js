@@ -1,21 +1,22 @@
 import React, { useState, Fragment } from "react";
-import "./Search.css";
 
-const Search = ({ history }) => {
+
+const Searchh = ({ history }) => {
   const [keyword, setKeyword] = useState("");
 
   const searchSubmitHandler = (e) => {
     e.preventDefault();
     if (keyword.trim()) {
-      history.push(`/Products/${keyword}`);
+      history.push(`/Productts/${keyword}`);
     } else {
-      history.push("/Products");
+      history.push("/Productts");
     }
   };
 
   return (
     <Fragment>
-     <form className="searchBox" onSubmit={searchSubmitHandler}>
+     
+      <form className="searchBox" onSubmit={searchSubmitHandler}>
         <input
           type="text"
           placeholder="Search a Product ..."
@@ -27,4 +28,4 @@ const Search = ({ history }) => {
   );
 };
 
-export default Search;
+export default Searchh;

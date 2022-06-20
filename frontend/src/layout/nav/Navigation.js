@@ -1,5 +1,5 @@
 import React from 'react';
-import pic1 from '../../project-pic/home.png';
+import pic1 from '../../project-pic/h.png';
 import pic2 from '../../project-pic/login.png';
 import pic3 from '../../project-pic/menu.png';
 import Navbar from 'react-bootstrap/Navbar';
@@ -47,14 +47,16 @@ $(window).scroll(function () {
 
 
 return (
+ 
 
   <Navbar bg="white" expand="lg" className="navbar">
     <Container fluid>
-    <HomeIcon/>
-      {/* <img
+    <NavLink to="/" >
+      <img
         className="d-block w-5" src={pic1}
         alt="Second slide" height="20px"
-      /> */}
+      />
+      </NavLink>
       <NavLink to="/" className="logo_name">  TO-LET</NavLink>
       <Navbar.Toggle aria-controls="navbarScroll" />
       <Navbar.Collapse id="navbarScroll">
@@ -65,29 +67,21 @@ return (
           <NavLink className="navlink" to="Products">Broadcast</NavLink>
           <NavLink className="navlink" to="Productttt">Guesthouse</NavLink>
           <NavLink className="navlink" to="Pickup">Pick-up</NavLink>
-          {/* <NavLink className= "navlink" to="Cart">CART</NavLink> */}
-          <NavLink className= "navlink" to="Search">SEARCH</NavLink>
+          <NavLink className= "navlink account" to="LoginSignup">SignUp</NavLink>
+          {/* <NavLink className= "navlink" to="Search">SEARCH</NavLink> */}
         
         </Nav>
       </Navbar.Collapse>
 
-      <Form className="searchbarnav">
-        <div className=" d-flex dflex">
-        <FormControl type="search" placeholder=" Enter your location" className="menav-2" aria-label="Search" />
-        <IconContext.Provider value={{ className: "fa", size: "1.2rem", color: "gray" }}>
-          <div className="navbtn"><FaSistrix /></div>
-        </IconContext.Provider>
-        </div>
-      </Form>
-
+     
      
       
-      <NavLink to="LoginSignup" className='navlink'>
+      {/* <NavLink to="LoginSignup" className='navlink'>
       <Button className="d-flex login" >
      <img src={pic1} className="img-fluid" alt=' ' />
       
       </Button>
-      </NavLink>
+      </NavLink> */}
     
     </Container>
   </Navbar>

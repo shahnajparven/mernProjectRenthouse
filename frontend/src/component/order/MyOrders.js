@@ -24,7 +24,7 @@ const MyOrders = () => {
       field: "status",
       headerName: "Status",
       minWidth: 150,
-      flex: 0.5,
+      flex: 0.3,
       cellClassName: (params) => {
         return params.getValue(params.id, "status") === "Delivered"
           ? "greenColor"

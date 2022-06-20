@@ -28,6 +28,7 @@ const UpdateProduct = ({ history, match }) => {
   } = useSelector((state) => state.product);
 
   const [name, setName] = useState("");
+  const [location, setLocation] = useState("");
   const [price, setPrice] = useState(0);
   const [description, setDescription] = useState("");
   const [category, setCategory] = useState("");
@@ -50,6 +51,7 @@ const UpdateProduct = ({ history, match }) => {
       dispatch(getProductDetails(productId));
     } else {
       setName(product.name);
+      setLocation(product.location);
       setDescription(product.description);
       setPrice(product.price);
       setCategory(product.category);
@@ -88,6 +90,7 @@ const UpdateProduct = ({ history, match }) => {
     const myForm = new FormData();
 
     myForm.set("name", name);
+    myForm.set("location", location);
     myForm.set("price", price);
     myForm.set("description", description);
     myForm.set("category", category);
@@ -142,6 +145,16 @@ const UpdateProduct = ({ history, match }) => {
                 required
                 value={name}
                 onChange={(e) => setName(e.target.value)}
+              />
+            </div>
+            <div>
+              <SpellcheckIcon />
+              <input
+                type="text"
+                placeholder="Enter house name"
+                required
+                value={location}
+                onChange={(e) => setLocation(e.target.value)}
               />
             </div>
             <div>

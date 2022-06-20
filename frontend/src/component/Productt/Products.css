@@ -10,14 +10,6 @@
     font: 500 1.5vmax "Roboto";
     margin-left: 45%;
   }
-  .container {
-    display: flex;
-    margin: 2vmax auto;
-    width: 80vw;
-    flex-wrap: wrap;
-    justify-content: center;
-    max-width: 100%;
-  }
   
   .products {
     display: flex;
@@ -26,21 +18,18 @@
     margin-left: 15%;
     width: 85%;
     min-height: 30vh;
-   
   }
   
   .paginationBox {
     display: flex;
     justify-content: center;
     margin: 6vmax;
-  
   }
   
   .pagination {
     display: flex;
     justify-content: center;
     padding: 0;
-    
   }
   
   .page-item {
@@ -81,23 +70,11 @@
   .pageLinkActive {
     color: white;
   }
-
-
-  .searchbtn{
-    background-color: tomato;
-    border: none;
-    padding: 10px 25px 10px 25px;
-    color: white;
-    width: 100%;
-    margin-bottom: 5%;
-    font: 500 1.2vmax "Roboto";
-    font-weight: lighter;
-}
   
   .filterBox {
     width: 12vmax;
     position: absolute;
-    top: 15vmax;
+    top: 20vmax;
     left: 4vmax;
   }
 
@@ -106,7 +83,7 @@
     padding: 0%;
   }
   .categories-heding{
-    padding-top: 0;
+    padding-top: 2vh;
     color: tomato;
   }
   .category-link {
@@ -125,15 +102,6 @@
     border: 1px solid rgba(0, 0, 0, 0.329);
   }
   
-.printbtn{
-  background-color: tomato;
-  padding: 8px 25px 8px 25px;
-  margin-top: 5%;
-  border: none;
-  color: white;
-}
-
-
   @media screen and (max-width: 600px) {
     .filterBox {
       width: 20vmax;

@@ -49,7 +49,7 @@ const OrderList = ({ history }) => {
   }, [dispatch, alert, error, deleteError, history, isDeleted]);
 
   const columns = [
-    { field: "id", headerName: "Order ID", minWidth: 300, flex: 1 },
+    { field: "id", headerName: "Order ID", minWidth: 150, flex: 0.5 },
 
     {
       field: "status",
@@ -64,10 +64,10 @@ const OrderList = ({ history }) => {
     },
     {
       field: "itemsQty",
-      headerName: "Items Qty",
+      headerName: "Items",
       type: "number",
-      minWidth: 150,
-      flex: 0.4,
+      minWidth: 100,
+      flex: 0.2,
     },
 
     {

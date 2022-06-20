@@ -18,11 +18,16 @@ const ReviewCard = ({review}) => {
 
   return (
     <div className='reviewCard'>
+<div className='reviewpic'>
 
       <img src="https://image.shutterstock.com/image-vector/user-login-authenticate-icon-human-260nw-1365533969.jpg" alt="User" />
       <p>{review.name}</p>
+      </div>
+      <div className='reviewdetails'>
+    
       <ReactStars {...options} />
       <span className="reviewCardComment">{review.comment}</span>
+    </div>
     </div>
 
   );

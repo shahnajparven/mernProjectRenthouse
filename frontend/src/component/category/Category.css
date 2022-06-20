@@ -3,6 +3,7 @@
     width: 100%;
     background-color: #ffffff;
     z-index: 5;
+    font: 500 1.2vmax "Roboto";
 }
 .category-container{
     padding-top: 18vh;
@@ -46,4 +47,47 @@ padding-left: 1%;
 .cat-card7{
     background-color: #90EE90!important;
     color: #ffffff;
+}
+
+.rentchart{
+width: 100%;
+display: flex;
+height: auto;
+padding-top: 10%;
+padding-bottom: 10%;
+}
+.linechart{
+    width: 50%;
+    padding-left: 8%;
+}
+.linechart h4{
+ text-align: center;
+ padding-bottom: 10vh;
+    
+}
+
+.pichart{
+    width: 80%;
+}
+.paper{
+    width: 60%;
+    border: none;
+    margin: 0 auto;
+}
+.paper1{
+    width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+    .rentchart{
+        display: grid;
+        }
+        .pichart{
+            width: 100%;
+            margin: 2%;
+        }
+        .linechart{
+            width: 90%;
+            
+        }
 }

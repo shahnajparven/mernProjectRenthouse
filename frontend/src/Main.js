@@ -10,6 +10,7 @@ import Product from './component/Home/Product.js';
 import Loader from './layout/Loader.js';
 import { useSelector } from "react-redux";
 import Search from "./component/Home/Search.js";
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Footer from "./layout/footer/Footer.js";
 import Category from "./component/category/Category.js";
@@ -47,6 +48,9 @@ import UsersList from "./component/admin/UserList.js";
 import UpdateUser from "./component/admin/UpdateUser.js";
 import ProcessOrder from "./component/admin/ProcessOrder.js";
 import PickupList from "./component/admin/PickupList.js";
+import Renthouse from "./component/category/Renthouse.js";
+import RenthouseChart from "./component/category/RenthouseChart.js";
+import NotFound from "./layout/Not Found/NotFound.js";
 
 const Main = () => {
 
@@ -78,24 +82,35 @@ const Main = () => {
             {isAuthenticated && <UserOptions user={user} />}
 
             {stripeApiKey && (
-                    <Elements stripe={loadStripe(stripeApiKey)}>
-                        <ProtectedRoute extact path='/process/payment' component={Payment} />
-                    </Elements>
-                )}
+                <Elements stripe={loadStripe(stripeApiKey)}>
+                    <ProtectedRoute extact path='/process/payment' component={Payment} />
+                </Elements>
+            )}
 
             <Switch>
                 <Route exact path="/" component={Home} />
                 <Route extact path='/Category' component={Category} />
                 <Route extact path='/Pickup' component={Pickup} />
                 <Route extact path='/Test' component={Test} />
-                <Route extact path='/product/:id' component={ProductDetails} />
-                <Route extact path='/products' component={Products} />
+
+
+                <Route exact path="/product/:id" component={ProductDetails} />
+                <Route exact path="/products" component={Products} />
                 <Route path="/products/:keyword" component={Products} />
+
+                <Route exact path="/search" component={Search} />
+
+
                 <Route extact path='/ProductCard' component={ProductCard} />
                 <Route extact path='/Product' component={Product} />
                 <Route extact path='/sad' component={Loader} />
-                <Route extact path='/search' component={Search} />
                 <Route extact path='/Productttt' component={Productttt} />
+
+
+                <Route extact path='/Renthouse' component={Renthouse} />
+                <Route extact path='/RenthouseChart' component={RenthouseChart} />
+
+
                 <Route extact path='/NewProduct' component={NewProduct} />
                 <Route extact path='/LoginSignup' component={LoginSignUp} />
                 <Route extact path='/Cart' component={Cart} />
@@ -112,14 +127,11 @@ const Main = () => {
 
                 <ProtectedRoute isAdmin={true} extact path='/admin/dashboard' component={Dashboard} />
                 <ProtectedRoute isAdmin={true} extact path='/admin/products' component={ProductList} />
-                <ProtectedRoute isAdmin={true} exact path="/admin/product/:id" component={UpdateProduct}/>
+                <ProtectedRoute isAdmin={true} exact path="/admin/product/:id" component={UpdateProduct} />
                 <ProtectedRoute isAdmin={true} extact path='/admin/users' component={UsersList} />
                 <ProtectedRoute isAdmin={true} extact path='/admin/user/:id' component={UpdateUser} />
-                <ProtectedRoute isAdmin={true} exact path="/admin/order/:id" component={ProcessOrder}/>
-                <ProtectedRoute isAdmin={true} exact path="/admin/pickup" component={PickupList}/>
-               
-
-               
+                <ProtectedRoute isAdmin={true} exact path="/admin/order/:id" component={ProcessOrder} />
+                <ProtectedRoute isAdmin={true} exact path="/admin/pickup" component={PickupList} />
 
 
 
@@ -129,8 +141,8 @@ const Main = () => {
                 <ProtectedRoute extact path='/orders' component={MyOrders} />
                 <ProtectedRoute extact path='/order/:id' component={OrderDetails} />
                 <ProtectedRoute extact path='/admin/orders' component={OrderList} />
-                
-               
+
+                <Route component={window.location.pathname === "/process/payment" ? null : NotFound}/>
 
             </Switch>
             <Footer />

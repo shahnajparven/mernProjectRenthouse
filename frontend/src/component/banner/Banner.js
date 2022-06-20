@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, Fragment }  from "react";
 import pic from '../../project-pic/carousel.jpg';
 import pic2 from '../../project-pic/dhak.jpg';
 import pic1 from '../../project-pic/search.png';
@@ -11,7 +11,31 @@ import './Banner.css';
 import '../../Main.css';
 
 
-const Banner = () => {
+const Banner = ({ history }) => {
+
+  const [keyword, setKeyword] = useState("");
+
+  const searchSubmitHandler = (e) => {
+    e.preventDefault();
+    if (keyword.trim()) {
+      history.push(`/Products/${keyword}`);
+    } else {
+      history.push("/Products");
+    }
+  };
+
+
+
+
+
+
+
+
+
+
+
+
+
     
     //for scrolled jquery
     $(window).scroll(function () {
@@ -22,8 +46,10 @@ const Banner = () => {
   return (
     <>
 
-    <Form className="d-flex searchbarbanner">
-          <FormControl type="search" placeholder=" Enter your location" className="me-2" aria-label="Search" />
+    <Form className="d-flex searchbarbanner" onSubmit={searchSubmitHandler}>
+          <FormControl type="search" placeholder=" Enter your location" className="me-2" aria-label="Search"
+           onChange={(e) => setKeyword(e.target.value)}
+          />
           <IconContext.Provider value={{ className: "fa", size: "1.2rem", color: "gray" }}>
             <div className="bannerbtn"><FaSistrix /></div>
           </IconContext.Provider>

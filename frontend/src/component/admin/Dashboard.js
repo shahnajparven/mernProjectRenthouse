@@ -6,18 +6,20 @@ import { Link } from "react-router-dom";
 import { Doughnut, Line } from "react-chartjs-2";
 import { useSelector, useDispatch } from "react-redux";
 import { getAdminProduct } from "../../actions/productAction";
-// import { getAllOrders } from "../../actions/orderAction.js";
+ import { getAllOrders } from "../../actions/orderAction.js";
 import { getAllUsers } from "../../actions/userAction.js";
+import { userDetailsReducer } from "../../reducers/userReducer";
+import Renthouse from "../category/Renthouse";
 // import MetaData from "../layout/MetaData";
 
 const Dashboard = () => {
   const dispatch = useDispatch();
 
-  const { products } = useSelector((state) => state.products);
+   const { products } = useSelector((state) => state.products);
 
-//   const { orders } = useSelector((state) => state.allOrders);
+   const { orders } = useSelector((state) => state.allOrders);
 
-//   const { users } = useSelector((state) => state.allUsers);
+   const { users } = useSelector((state) => state.allUsers);
 
   let outOfStock = 0;
 
@@ -40,13 +42,13 @@ const Dashboard = () => {
 //     });
 
   const lineState = {
-    labels: ["Initial Amount", "Amount Earned"],
+    labels: ["Initial", "total"],
     datasets: [
       {
-        label: "TOTAL AMOUNT",
+        label: "TOTAL POST",
         backgroundColor: ["tomato"],
         hoverBackgroundColor: ["rgb(197, 72, 49)"],
-        data: [0, 4000],
+        data: [0, products.length]
       },
     ],
   };
@@ -71,30 +73,37 @@ const Dashboard = () => {
       <Sidebar />
 
       <div className="dashboardContainer">
+        <p>.</p>
       <Typography component="h1">Dashboard</Typography>
+      
 
         <div className="dashboardSummary">
-          <div>
+          {/* <div>
             <p>
               Total Members <br /> 200
             </p>
-          </div>
+          </div> */}
            <div className="dashboardSummaryBox2">
             <Link to="/admin/products">
-              <p>Product</p>
-              <p>{products && products.length}</p>
+              <p>Post</p>
+              <p>{products.length}</p>
             </Link>
             <Link to="/admin/orders">
               <p>Orders</p>
-              <p>30</p>
+              <p>{orders.length}</p>
             </Link>
             <Link to="/admin/users">
               <p>Users</p>
-              <p>20</p>
+              <p>{users.length}</p>
             </Link>
           </div>
         </div>
-
+     <br></br>
+     <br></br>
+     <br></br>
+     <br></br>
+     <br></br>
+     <br></br>
          <div className="lineChart"> 
           <Line data={lineState} />
         </div>
@@ -102,19 +111,10 @@ const Dashboard = () => {
         <div className="doughnutChart">
            <Doughnut data={doughnutState} />
         </div>
-
-
-
-
-        
-
-
-
-
-
-
+        <Renthouse/>
       </div>
-    //</div>
+    </div>
+   
   );
 };
 

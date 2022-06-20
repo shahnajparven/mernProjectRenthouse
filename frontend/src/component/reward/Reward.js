@@ -27,7 +27,7 @@ const Reward = () => {
 
         <div className="reward">
             <Row>
-                <Col xs="auto" lg="7" sm="7" xm="12">
+                <Col lg="7" md="6" xs="12">
                     <Card className="reward-card1">
                         <Card.Body>
                             <Card.Title className="reward-title">
@@ -48,7 +48,7 @@ const Reward = () => {
                         </Card.Body>
                     </Card>
                 </Col>
-                <Col xs="auto" lg="5" sm="5" xm="12">
+                <Col lg="5" md="6" xs="12">
                     <Card className="reward-card2">
                         <Card.Body>
                             <Card.Title className="reward-title">
@@ -66,7 +66,7 @@ const Reward = () => {
                 </Col>
             </Row>
             <Row>
-                <Col xs="auto" lg="5" sm="4" md="6" xm="12">
+                <Col lg="5" md="6" xs="12">
                     <Card className="reward-card3">
                         <Card.Body>
                             <Card.Title className="reward-title">
@@ -82,7 +82,7 @@ const Reward = () => {
                         </Card.Body>
                     </Card>
                 </Col>
-                <Col xs="auto" lg="4" sm="4" md="6" xm="12">
+                <Col lg="4" md="6" xs="12">
 
                     <Card className="reward-card4">
                         <Card.Body>
@@ -99,7 +99,7 @@ const Reward = () => {
                         </Card.Body>
                     </Card>
                 </Col>
-                <Col xs="auto" sm="4" lg="3" md="12" xm="12">
+                <Col lg="3" md="12" xs="12">
                     <Card className="reward-card5">
                         <Card.Body>
                             <Card.Title className="reward-title">

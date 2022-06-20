@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from "react";
+import React, { Fragment, useEffect, useRef } from "react";
 import "./OrderDetails.css";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
@@ -6,6 +6,8 @@ import { Typography } from "@material-ui/core";
 import { getOrderDetails, clearErrors } from "../../actions/orderAction";
 import Loader from "../../layout/Loader";
 import { useAlert } from "react-alert";
+import { useReactToPrint } from 'react-to-print';
+
 
 const OrderDetails = ({ match }) => {
   const { order, error, loading } = useSelector((state) => state.orderDetails);
@@ -21,6 +23,18 @@ const OrderDetails = ({ match }) => {
 
     dispatch(getOrderDetails(match.params.id));
   }, [dispatch, alert, error, match.params.id]);
+
+
+
+//print method start
+const componentRef = useRef();
+const handlePrint = useReactToPrint({
+  content: () => componentRef.current,
+});
+//print method end
+
+
+
   return (
     <Fragment>
       {loading ? (
@@ -31,8 +45,15 @@ const OrderDetails = ({ match }) => {
             <div className="orderDetailsContainer">
               <Typography component="h1">
                 Order #{order && order._id}
+                <br></br>
+                <button className="printbtn" onClick={handlePrint}>Print</button>
+
               </Typography>
-              <Typography>Shipping Info</Typography>
+            
+              <div ref={componentRef}>
+
+              <Typography><h3>Shipping Info</h3></Typography>
+
               <div className="orderDetailsContainerBox">
                 <div>
                   <p>Name:</p>
@@ -52,7 +73,7 @@ const OrderDetails = ({ match }) => {
                   </span>
                 </div>
               </div>
-              <Typography>Payment</Typography>
+              <Typography><h3>Payment</h3></Typography>
               <div className="orderDetailsContainerBox">
                 <div>
                   <p
@@ -76,7 +97,7 @@ const OrderDetails = ({ match }) => {
                 </div>
               </div>
 
-              <Typography>Order Status</Typography>
+              <Typography><h3>Order Status</h3></Typography>
               <div className="orderDetailsContainerBox">
                 <div>
                   <p
@@ -90,10 +111,10 @@ const OrderDetails = ({ match }) => {
                   </p>
                 </div>
               </div>
-            </div>
+           
 
             <div className="orderDetailsCartItems">
-              <Typography>Order Items:</Typography>
+              <Typography><h3>Order Items:</h3></Typography>
               <div className="orderDetailsCartItemsContainer">
                 {order.orderItems &&
                   order.orderItems.map((item) => (
@@ -110,6 +131,8 @@ const OrderDetails = ({ match }) => {
                   ))}
               </div>
             </div>
+          </div>
+          </div>
           </div>
         </Fragment>
       )}

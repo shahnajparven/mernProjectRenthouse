@@ -40,10 +40,10 @@
     justify-content: center;}
   
   .icon a {
-    height: 50px;
-    width: 50px;
+    height: 60px;
+    width: 60px;
     background-color: gray;
-    border-radius: 25px;
+    border-radius: 30px;
     text-align: center;
     margin: 10px; 
 }
@@ -51,7 +51,7 @@
     background-color:#ffc178; }
 .fa{
     color:#ffffff;
-    margin-top: 8px;  
+    margin-top: 11px;  
     }
 /*****************************Footericon**********************/
 
@@ -62,6 +62,39 @@
 .footer-button{
     background-color:#ffc178 !important;
     border: none !important;
-    padding:8px 35px !important;
+    padding: 8px;
     font-weight: bold;
 }
+
+
+@media screen and (max-width: 600px) {
+    .icon {
+        margin-top: 2rem;
+        display: flex;
+        width: 100%;
+        justify-content: center;}
+      
+      .icon a {
+        height: 30px;
+        width: 30px;
+        background-color: gray;
+        border-radius: 15px;
+        text-align: center;
+        margin: 5px; 
+    }
+    .fa{
+        color:#ffffff;
+        margin-top: 8px;  
+        }
+        .footer-button{
+            padding: 3.5px;
+        }
+        
+  }
+  @media screen and (max-width: 1000px) {
+   
+        .footer-button{
+            padding: 4.5px;
+        }
+        
+  }

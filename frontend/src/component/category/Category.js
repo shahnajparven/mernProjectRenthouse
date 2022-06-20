@@ -24,7 +24,7 @@ const Category = () => {
                         <Row>
                             <Col className="mt-4" xs="auto" lg="4" sm="4" xm="12">
 
-
+                            <NavLink className="navlink" to="RenthouseChart">
                                 <Card className="cat-card1">
                                     <Card.Body>
                                         <Card.Title className="">
@@ -34,10 +34,11 @@ const Category = () => {
                                         <NavLink className="navlink" to="NewProduct"><Button className="cat-btn">View here</Button></NavLink>
                                     </Card.Body>
                                 </Card>
-
+                                </NavLink>
                             </Col>
                             <Col className="mt-4" xs="auto" lg="4" sm="4" xm="12">
 
+                            <NavLink className="navlink" to="RenthouseChart">
                                 <Card className="cat-card2">
                                     <Card.Body>
                                         <Card.Title className="">
@@ -47,11 +48,11 @@ const Category = () => {
                                         <NavLink className="navlink" to="NewProduct"><Button className="cat-btn">View here</Button></NavLink>
                                     </Card.Body>
                                 </Card>
-
+                                </NavLink>
                             </Col>
 
                             <Col className="mt-4" xs="auto" lg="4" sm="4" md="4" xm="12">
-
+  <NavLink className="navlink" to="RenthouseChart">
                                 <Card className="cat-card3">
                                     <Card.Body>
                                         <Card.Title className="">
@@ -61,13 +62,13 @@ const Category = () => {
                                         <NavLink className="navlink" to="NewProduct"><Button className="cat-btn">View here</Button></NavLink>
                                     </Card.Body>
                                 </Card>
-
+                                </NavLink>
                             </Col>
 
                         </Row>
                         <Row>
                             <Col className="mt-4" xs="auto" lg="4" sm="4" xm="12">
-
+                            <NavLink className="navlink" to="RenthouseChart">
                                 <Card className="cat-card4">
 
                                     <Card.Body>
@@ -78,10 +79,10 @@ const Category = () => {
                                         <NavLink className="navlink" to="NewProduct"><Button className="cat-btn">View here</Button></NavLink>
                                     </Card.Body>
                                 </Card>
-
+                                </NavLink>
                             </Col>
                             <Col className="mt-4" xs="auto" lg="4" sm="4" xm="12">
-
+                            <NavLink className="navlink" to="RenthouseChart">
                                 <Card className="cat-card5">
                                     <Card.Body>
                                         <Card.Title className="">
@@ -92,11 +93,11 @@ const Category = () => {
                                         <NavLink className="navlink" to="NewProduct"><Button className="cat-btn">View here</Button></NavLink>
                                     </Card.Body>
                                 </Card>
-
+                                </NavLink>
                             </Col>
 
                             <Col className="mt-4" xs="auto" lg="4" sm="4" xm="12">
-
+                            <NavLink className="navlink" to="RenthouseChart">
                                 <Card className="cat-card6">
                                     <Card.Body>
                                         <Card.Title className="">
@@ -106,12 +107,12 @@ const Category = () => {
                                         <NavLink className="navlink" to="NewProduct"><Button className="cat-btn">View here</Button></NavLink>
                                     </Card.Body>
                                 </Card>
-
+                                </NavLink>
                             </Col>
                         </Row>
                         <Row>
                             <Col className="mt-4" xs="auto" lg="4" sm="4" xm="12">
-
+                            <NavLink className="navlink" to="RenthouseChart">
                                 <Card className="cat-card7">
 
                                     <Card.Body>
@@ -122,7 +123,7 @@ const Category = () => {
                                         <NavLink className="navlink" to="NewProduct"><Button className="cat-btn">View here</Button></NavLink>
                                     </Card.Body>
                                 </Card>
-
+                                </NavLink>
                             </Col>
                         </Row>
 

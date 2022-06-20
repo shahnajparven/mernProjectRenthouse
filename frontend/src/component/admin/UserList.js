@@ -49,7 +49,7 @@ const UsersList = ({ history }) => {
   }, [dispatch, alert, error, deleteError, history, isDeleted, message]);
 
   const columns = [
-    { field: "id", headerName: "User ID", minWidth: 180, flex: 0.8 },
+    { field: "id", headerName: "User ID", minWidth: 150, flex: 0.5 },
 
     {
       field: "email",
@@ -68,8 +68,8 @@ const UsersList = ({ history }) => {
       field: "role",
       headerName: "Role",
       type: "number",
-      minWidth: 150,
-      flex: 0.3,
+      minWidth: 50,
+      flex: 0.2,
       cellClassName: (params) => {
         return params.getValue(params.id, "role") === "admin"
           ? "greenColor"

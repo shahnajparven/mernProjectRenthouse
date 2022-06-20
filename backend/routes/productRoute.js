@@ -22,13 +22,22 @@ router
 .delete(isAuthenticatedUser,authorizeRoles("admin"),deleteProduct)
 .get(getProductDetails);
 
-router
-.route("/review").put(isAuthenticatedUser,createProductReview);
+
+
+router.route("/review").put(isAuthenticatedUser, createProductReview);
 
 router
   .route("/reviews")
   .get(getProductReviews)
-  .delete(isAuthenticatedUser, deleteReview);
+  .delete(deleteReview);
+
+// router
+// .route("/review").put(isAuthenticatedUser,createProductReview);
+
+// router
+//   .route("/reviews")
+//   .get(getProductReviews)
+//   .delete(isAuthenticatedUser, deleteReview);
 
 
 module.exports = router;

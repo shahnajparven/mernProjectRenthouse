@@ -5,6 +5,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { useAlert } from "react-alert";
 import ProductCard from "./ProductCard";
 import Loader from "../../layout/Loader";
+import { Link } from "react-router-dom";
+import Home from "./Home";
 
 
 const Product = () => {
@@ -32,11 +34,11 @@ const Product = () => {
         ) : (
 
         <Fragment>
-          <div className="container">
+       {/* <Link className="productCard" to={Home}> */}
             <div className="container" id="container">
               {products && products.map((product) => <ProductCard product={product} />)}
             </div>
-          </div>
+            {/* </Link> */}
           <hr />
         </Fragment>
       )}

@@ -6,12 +6,12 @@ import Row from 'react-bootstrap/Row';
 
 const Footerform = () => {
     return (
-        <Form className="d-flex" className="">
+        <Form className="d-flex">
             <Form.Group as={Row} className="mb-2" controlId="formPlaintextEmail">            
-                <Col xs="auto" sm="8">
+                <Col lg="8" xs="8">
                 <Form.Control className="form-input" type="email" placeholder="Enter email" />
                 </Col>
-                <Col xs="auto" sm="4">
+                <Col lg="4" xs="4">
                 <Button className="footer-button">Subscrive</Button>
                 </Col>
             </Form.Group>

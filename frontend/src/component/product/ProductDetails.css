@@ -10,6 +10,14 @@
       height: 50vh;
       width: 100%;
   }
+  .Carousel{
+    height: 60vh;
+    width: 100%;
+  }
+  .CarouselImage{
+    height: 60vh;
+    width: 100%;
+  }
   
   .ProductDetails > div {
     width: 100%;
@@ -144,32 +152,40 @@
   .reviewsHeading {
     color: #000000be;
     font: 500 1.4vmax "Roboto";
-    text-align: center;
+    text-align: left;
     border-bottom: 1px solid rgba(0, 0, 0, 0.226);
-    padding: 1vmax;
+    margin-left: 8%;
     width: 20vmax;
-    margin: auto;
-    margin-bottom: 4vmax;
+
   }
   .reviews {
-    display: flex;
+   margin-left: 5%;
     overflow: auto;
   }
   
   .reviewCard {
-    flex: none;
-  
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.226);
-    border: 1px solid rgba(56, 56, 56, 0.116);
-    width: 30vmax;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 1vmax;
-    padding: 3vmax;
+     display: flex;
+    width: 80%;
+    align-items: left;
+    padding: 2vmax;
   }
-  .reviewCard > img {
+  .reviewpic{
+    width: 10%;
+    color: aqua;
+    margin: 0;
+  }
+  .reviewpic p{
+    color: rgba(0, 0, 0, 0.836);
+    font: 600 0.9vmax "Roboto";
+  }
+  .reviewpic > img {
     width: 5vmax;
+    margin-left: 7%;
+  }
+  .reviewdetails{
+    width: 60%;
+    padding-left: 5%;
+    padding-top: 1vmax;
   }
   .reviewCard > p {
     color: rgba(0, 0, 0, 0.836);
@@ -182,7 +198,7 @@
   
   .noReviews {
     font: 400 1.3vmax "Gill Sans";
-    text-align: center;
+    background-color: red;
     color: rgba(0, 0, 0, 0.548);
   }
   @media screen and (max-width: 600px) {
@@ -234,12 +250,15 @@
       width: 3vmax;
       font: 400 1.8vmax "Roboto";
     }
+
+
+
   
     .detailsBlock-3-1 > button:last-child {
       font: 500 1.7vmax "Roboto";
       padding: 1.5vmax;
       width: 20vmax;
-      margin: 3vmax 0;
+     
     }
   
     .detailsBlock-3 > p {
@@ -263,11 +282,11 @@
       margin: 3vmax 0;
     }
   
-    .reviewCard > p {
+    /* .reviewpic > p {
       font: 600 3vw "Roboto";
     }
     .reviewCardComment {
-      font: 300 5vw cursive;
-    }
+      font: 200 5vw cursive;
+    } */
   }
-  
+   

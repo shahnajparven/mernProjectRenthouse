@@ -9,6 +9,10 @@ const pickupSchema = new mongoose.Schema({
     type: String,
     required: [true, "Please Enter where are you go"],
   },
+  number: {
+    type: Number,
+    required: [true, "Please Enter your phone number"],
+  },
   labour: {
     type: Number,
     required: [true, "Please Enter labour amount"],

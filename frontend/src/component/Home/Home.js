@@ -8,7 +8,7 @@ import Products from "./Products";
 import { Link } from 'react-router-dom';
 import Product from "./Product";
 import Loader from "../../layout/Loader";
-import Banner from "../banner/Banner";
+import Bannerr from "../banner/Bannerr";
 import Reward from "../reward/Reward";
 import Test from "../pickup/Test";
 
@@ -20,7 +20,7 @@ const Home = () => {
 
     <Fragment>
 
-      <Banner />
+      <Bannerr />
       <Product />
       <Reward />
       <Test/>           

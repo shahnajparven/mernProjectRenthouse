@@ -3,16 +3,21 @@ const mongoose = require("mongoose");
 const productSchema = new mongoose.Schema({
   name: {
     type: String,
-    required: [true, "Please Enter product Name"],
+    required: [true, "Please Enter Location"],
+   
+  },
+  location: {
+    type: String,
+    required: [true, "Please Enter House Name"],
     trim: true,
   },
   description: {
     type: String,
-    required: [true, "Please Enter product Description"],
+    required: [true, "Please Enter House Description"],
   },
   price: {
     type: Number,
-    required: [true, "Please Enter product Price"],
+    required: [true, "Please Enter House Price"],
     maxLength: [8, "Price cannot exceed 8 characters"],
   },
   ratings: {
@@ -45,31 +50,38 @@ const productSchema = new mongoose.Schema({
     type: Number,
     default: 0,
   },
-  reviews: [
-    {
-      name: {
-        type: String,
-        required: true,
-      },
-      rating: {
-        type: Number,
-        required: true,
-      },
-      comment: {
-        type: String,
-        required: true,
-      },
+reviews: [
+  {
+    user: {
+      type: mongoose.Schema.ObjectId,
+      ref: "User",
+      required: true,
     },
-  ],
-  user:{
-     type:mongoose.Schema.ObjectId,
-     ref:"User",
-     require:true
+    name: {
+      type: String,
+      required: true,
+    },
+    rating: {
+      type: Number,
+      required: true,
+    },
+    comment: {
+      type: String,
+      required: true,
+    },
   },
-  createdAt: {
-    type: Date,
-    default: Date.now,
-  },
+],
+
+user: {
+  type: mongoose.Schema.ObjectId,
+  ref: "User",
+  required: true,
+},
+createdAt: {
+  type: Date,
+  default: Date.now,
+},
 });
+
 
 module.exports = mongoose.model("Product", productSchema);

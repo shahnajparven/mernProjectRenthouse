@@ -6,6 +6,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useAlert } from "react-alert";
 import Loader from '../../layout/Loader';
 import { clearErrors } from "../../actions/productAction";
+import "./Product.css";
 
 
 const ProductCard = ({ product }) => {
@@ -24,8 +25,8 @@ const ProductCard = ({ product }) => {
 <Fragment>
  
 <Link className='productCard' to={`/product/${product._id}`}>
-  <img src={product.images[0].url} alt={product.name} />
-  <p>{product.name}</p>
+  <img src={product.images[0].url} alt={product.location} />
+  <p>{product.location}</p>
   <div>
     <Reactstars {...options} /><span>({product.numOfReviews} review)</span>
     </div>

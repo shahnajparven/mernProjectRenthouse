@@ -10,11 +10,11 @@
     padding-bottom: 3%;
 }
 .piv{
+    background-position: center center;
     background-repeat: no-repeat;
     height: 75vh;
     overflow: hidden;
     background-size: cover;
-    background-position: center;
     background-image:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.4)),url(../../project-pic/pickup.png);
 }
 .pickup-button{

@@ -9,3 +9,13 @@
     height: 56px;
     border-radius: 100%;
   }
+  @media screen and (max-width: 600px) {
+    .speedDial {
+      right: 20vmax;
+      top: 1.5vmax;
+     
+    }
+  
+  
+  
+  }

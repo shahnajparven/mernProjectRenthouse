@@ -1,41 +1,44 @@
-import React, { Fragment, useEffect, useState, useRef } from "react";
-import "./Products.css"
-import { clearErrors, getProduct } from "../../actions/productAction";
+import React, { Fragment, useEffect, useState } from "react";
+import "./Products.css";
 import { useSelector, useDispatch } from "react-redux";
-import { useAlert } from "react-alert";
-import ProductCard from "./ProductCard";
+import { clearErrors, getProduct } from "../../actions/productAction";
 import Loader from "../../layout/Loader";
+
+import ProductCard from "../Home/ProductCard";
 import Pagination from "react-js-pagination";
 import Slider from "@material-ui/core/Slider";
+import { useAlert } from "react-alert";
 import Typography from "@material-ui/core/Typography";
-import { Container } from "react-bootstrap";
-import { useReactToPrint } from 'react-to-print';
-import {Link, NavLink,useLocation} from 'react-router-dom';
-
 
 const categories = [
-  "Rent-House",
-  "Sublet",
-  "Bachelors",
-  "Commersial-Area",
-  "Guest-House",
+  "Laptop",
+  "Footwear",
+  "Bottom",
+  "Tops",
+  "Attire",
+  "Camera",
+  "SmartPhones",
 ];
 
-
-const Products = ({ match }) => {
-
+const Productts = ({ match }) => {
   const dispatch = useDispatch();
 
-const alert = useAlert();
+  const alert = useAlert();
 
   const [currentPage, setCurrentPage] = useState(1);
   const [price, setPrice] = useState([0, 25000]);
   const [category, setCategory] = useState("");
+
   const [ratings, setRatings] = useState(0);
 
-  const { products, loading, error, productsCount, resultPerPage,filteredProductsCount } = useSelector(
-    (state) => state.products);
-
+  const {
+    products,
+    loading,
+    error,
+    productsCount,
+    resultPerPage,
+    filteredProductsCount,
+  } = useSelector((state) => state.products);
 
   const keyword = match.params.keyword;
 
@@ -46,48 +49,24 @@ const alert = useAlert();
   const priceHandler = (event, newPrice) => {
     setPrice(newPrice);
   };
-
   let count = filteredProductsCount;
 
-
   useEffect(() => {
-    if(error){
+    if (error) {
       alert.error(error);
       dispatch(clearErrors());
     }
-  
-    dispatch(getProduct(keyword,currentPage, price, category,ratings));
-  }, [dispatch, keyword,currentPage, price, category,ratings,alert,error]);
 
-
-
-
-//print method start
-  const componentRef = useRef();
-  const handlePrint = useReactToPrint({
-    content: () => componentRef.current,
-  });
-//print method end
-
-
+    dispatch(getProduct(keyword, currentPage, price, category, ratings));
+  }, [dispatch, keyword, currentPage, price, category, ratings, alert, error]);
 
   return (
     <Fragment>
-      
       {loading ? (
         <Loader />
       ) : (
         <Fragment>
-         <div className="products-container">
-          <h2 className="productsHeading">All Rental Houses</h2>
-
-
-
-                         
-      <div ref={componentRef}>
-      
-
-
+          <h2 className="productsHeading">Products</h2>
 
           <div className="products">
             {products &&
@@ -95,14 +74,9 @@ const alert = useAlert();
                 <ProductCard key={product._id} product={product} />
               ))}
           </div>
-          </div>
-        
+
           <div className="filterBox">
-        
-         
-          <NavLink className="" to="Search"><button className="searchbtn">Search with area</button></NavLink>
-         
-            <Typography className="price-heding">Price</Typography>
+            <Typography>Price</Typography>
             <Slider
               value={price}
               onChange={priceHandler}
@@ -112,7 +86,7 @@ const alert = useAlert();
               max={25000}
             />
 
-            <Typography className="categories-heding">Categories</Typography>
+            <Typography>Categories</Typography>
             <ul className="categoryBox">
               {categories.map((category) => (
                 <li
@@ -124,10 +98,8 @@ const alert = useAlert();
                 </li>
               ))}
             </ul>
-        
 
-
-          <fieldset>
+            <fieldset>
               <Typography component="legend">Ratings Above</Typography>
               <Slider
                 value={ratings}
@@ -140,12 +112,8 @@ const alert = useAlert();
                 max={5}
               />
             </fieldset>
-            <button className="printbtn" onClick={handlePrint}>Print</button>
-
           </div>
-        
-
-          {resultPerPage < productsCount && (
+          {resultPerPage < count && (
             <div className="paginationBox">
               <Pagination
                 activePage={currentPage}
@@ -162,16 +130,11 @@ const alert = useAlert();
                 activeLinkClass="pageLinkActive"
               />
             </div>
-            
           )}
-          
-         
-          </div>
         </Fragment>
       )}
-    
     </Fragment>
   );
 };
 
-export default Products;
+export default Productts;
