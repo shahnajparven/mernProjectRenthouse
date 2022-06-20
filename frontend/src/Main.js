@@ -142,7 +142,6 @@ const Main = () => {
                 <ProtectedRoute extact path='/order/:id' component={OrderDetails} />
                 <ProtectedRoute extact path='/admin/orders' component={OrderList} />
 
-                <Route component={window.location.pathname === "/process/payment" ? null : NotFound}/>
 
             </Switch>
             <Footer />
