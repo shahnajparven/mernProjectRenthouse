@@ -107,6 +107,8 @@ const Notes = ({ history }) => {
                         <CallIcon />
                       <input id='input' type='number' placeholder="Enter Phone number" name='number'
                                 value={pickup.number}
+                                required
+                                size="11"
                                 onChange={(e) =>  setNumber(e.target.value)} />
                         </div>
 

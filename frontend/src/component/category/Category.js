@@ -20,7 +20,7 @@ const Category = () => {
             <div className="category">
                 <div className="category-container">
                     <form method="GET">
-                        <h2>We are Categories Services here</h2>
+                        <h2>Our Categories</h2>
                         <Row>
                             <Col className="mt-4" xs="auto" lg="4" sm="4" xm="12">
 
@@ -28,7 +28,7 @@ const Category = () => {
                                 <Card className="cat-card1">
                                     <Card.Body>
                                         <Card.Title className="">
-                                            <h5>House Rent</h5>
+                                            <h5>Rent House</h5>
                                         </Card.Title>
                                         <p>You can rent your a house from here  …</p>
                                         <NavLink className="navlink" to="NewProduct"><Button className="cat-btn">View here</Button></NavLink>

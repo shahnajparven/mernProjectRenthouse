@@ -197,8 +197,10 @@
   }
   
   .noReviews {
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+    padding-left: 7%;
     font: 400 1.3vmax "Gill Sans";
-    background-color: red;
     color: rgba(0, 0, 0, 0.548);
   }
   @media screen and (max-width: 600px) {
