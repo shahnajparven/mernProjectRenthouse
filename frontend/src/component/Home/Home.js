@@ -11,6 +11,8 @@ import Loader from "../../layout/Loader";
 import Bannerr from "../banner/Bannerr";
 import Reward from "../reward/Reward";
 import Test from "../pickup/Test";
+import Banner from "../banner/Banner"
+//import Banner from "../banner/Banner";
 
 const Home = () => {
 
@@ -20,7 +22,7 @@ const Home = () => {
 
     <Fragment>
 
-      <Bannerr />
+       <Banner/> 
       <Product />
       <Reward />
       <Test/>           
